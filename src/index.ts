@@ -1,6 +1,6 @@
 import { JupyterFrontEndPlugin } from "@jupyterlab/application";
 import { ISettingRegistry } from "@jupyterlab/coreutils";
-import { JSONExt, JSONObject, JSONArray } from "@phosphor/coreutils";
+import { JSONExt, JSONObject } from "@phosphor/coreutils";
 import { DisposableSet } from "@phosphor/disposable";
 
 const plugin: JupyterFrontEndPlugin<void> = {
@@ -39,7 +39,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
         settings.pluginChanged.connect((_s, p) => {
             if (p === "jupyterlab-file-glue:plugin") {
-                return pairMappings();
+                pairMappings().catch(console.error);
             }
         });
     }
