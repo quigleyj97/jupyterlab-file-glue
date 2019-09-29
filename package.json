@@ -4,7 +4,8 @@
   "description": "Map third party file extensions to Jupyter MIME types",
   "main": "lib/index.js",
   "jupyterlab": {
-    "extension": true
+    "extension": true,
+    "schemaDir": "schema"
   },
   "scripts": {
     "build": "tsc",
@@ -14,7 +15,8 @@
     "jupyterlab-extension"
   ],
   "files": [
-    "lib/*.js"
+    "lib/*.js",
+    "schema/*.json"
   ],
   "repository": "https://github.com/quigleyj97/jupyterlab-file-glue",
   "author": "Joe Quigley",
@@ -22,9 +24,8 @@
   "private": false,
   "dependencies": {
     "@jupyterlab/application": "^1.1.0",
-    "@jupyterlab/apputils": "^1.1.0",
-    "@jupyterlab/docregistry": "^1.1.0",
-    "@phosphor/widgets": "^1.8.0"
+    "@jupyterlab/coreutils": "^3.1.0",
+    "@jupyterlab/docregistry": "^1.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.1.0",
